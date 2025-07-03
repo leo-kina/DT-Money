@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Header } from '../../components/Header' // exemplo se o Header estiver em components
 import { Summary } from '../../components/Summary'
 import { TransactionsContainer,TransactionTable,PrinceHightLight } from './styles'
 import { SearchForm } from './components/SearchForm'
 
 export const Transactions = () => {
+useEffect(()=>{
+  fetch('http://localhost:3000/transaction').then(responce => {
+    console.log(responce)
+  })
+},[])
   return (
     <div>
       <Header />

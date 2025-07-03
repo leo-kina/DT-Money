@@ -1,69 +1,62 @@
-# React + TypeScript + Vite
+# 💰 DT Money
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação para gerenciamento de transações financeiras desenvolvida com **React + TypeScript**, com foco em boas práticas de código, organização e estilização moderna.
 
-Currently, two official plugins are available:
+> Projeto baseado no curso **Ignite - ReactJS** da [Rocketseat](https://www.rocketseat.com.br/), com melhorias e uso de bibliotecas modernas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ Cadastrar nova transação (entrada ou saída)
+- ✅ Listar transações com valores formatados
+- ✅ Buscar transações por palavra-chave
+- ✅ Exibir resumo com total de entradas, saídas e saldo
+- ✅ Estilização por temas (ThemeProvider)
+- ✅ Layout acessível e responsivo
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🧪 Tecnologias e Ferramentas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 💻 Front-end
+- **React** – Biblioteca para construção da UI
+- **TypeScript** – Superset do JavaScript com tipagem estática
+- **Styled-components** – Estilização CSS-in-JS com suporte a temas
+- **Radix UI** – Componentes acessíveis e não-opinativos
+- **Phosphor React** – Ícones modernos e personalizáveis
+- **React Hook Form + Zod** – Manipulação e validação de formulários
+- **Context API + useReducer** – Gerenciamento de estado global
+- **Axios** – Cliente HTTP para requisições à API
+- **JSON Server** – API fake para persistência local dos dados
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📷 Layout
+
+O layout foi inspirado nas aulas da Rocketseat, com algumas melhorias:
+
+- Visual limpo e moderno
+- Acessibilidade com Radix UI
+- Ícones com Phosphor React
+- Feedback visual no formulário e botões
+
+---
+
+## 🧭 Organização do Projeto
+
+```bash
+src/
+├─ @types/               # Tipagens globais
+├─ assets/               # Imagens e ícones
+├─ components/           # Componentes reutilizáveis (Header, Summary, etc)
+├─ contexts/             # Context API para transações
+├─ hooks/                # Hooks customizados
+├─ pages/                # Páginas da aplicação
+├─ reducers/             # Reducers para useReducer
+├─ styles/               # Temas e estilos globais
+├─ utils/                # Funções utilitárias (ex: formatação de data/moeda)
+├─ App.tsx               # Componente principal
+└─ main.tsx              # Ponto de entrada da aplicação

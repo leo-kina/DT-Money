@@ -44,19 +44,3 @@ O layout foi inspirado nas aulas da Rocketseat, com algumas melhorias:
 - Feedback visual no formulário e botões
 
 ---
-
-## 🧭 Organização do Projeto
-
-```bash
-src/
-├─ @types/               # Tipagens globais
-├─ assets/               # Imagens e ícones
-├─ components/           # Componentes reutilizáveis (Header, Summary, etc)
-├─ contexts/             # Context API para transações
-├─ hooks/                # Hooks customizados
-├─ pages/                # Páginas da aplicação
-├─ reducers/             # Reducers para useReducer
-├─ styles/               # Temas e estilos globais
-├─ utils/                # Funções utilitárias (ex: formatação de data/moeda)
-├─ App.tsx               # Componente principal
-└─ main.tsx              # Ponto de entrada da aplicação

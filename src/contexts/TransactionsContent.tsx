@@ -1,36 +1,50 @@
-import React, { createContext, useEffect, useState, type ReactNode } from 'react'
-interface TransactionsPropr{
-  id:number,
-  description:string
-  type:'income'| 'outcome'
-  price:number
+import React, {
+  createContext,
+  useEffect,
+  useState,
+  type ReactNode
+} from 'react'
+
+// Tipo dos dados da transação
+interface TransactionsPropr {
+  id: number
+  description: string
+  type: 'income' | 'outcome'
+  price: number
   category: string
   createdAt: string
 }
-interface TransactionContentType{
-    transaction:TransactionsPropr[]
+
+// Tipo que será usado no contexto
+interface TransactionContentType {
+  transaction: TransactionsPropr[]
 }
-interface TransactionProviderProps{
-    children:ReactNode
+
+// Props do componente Provider
+interface TransactionProviderProps {
+  children: ReactNode
 }
+
+// ✅ Criando o contexto
 export const TrransactionContext = createContext({} as TransactionContentType)
+
+// ✅ Agora os hooks estão dentro do componente
+export const TransactionsContent = ({ children }: TransactionProviderProps) => {
   const [transaction, setTransaction] = useState<TransactionsPropr[]>([])
-   async function  loadTransaction(){
-  const responce =  await fetch('http://localhost:3000/transaction')
-  const data = await responce.json()
 
+  useEffect(() => {
+    async function loadTransaction() {
+      const response = await fetch('http://localhost:3000/transaction')
+      const data = await response.json()
+      setTransaction(data)
+    }
 
-  setTransaction(data)
-  }
-useEffect(()=>{
+    loadTransaction()
+  }, [])
 
-loadTransaction()
-},[])
-export const TransactionsContent = ({children}:TransactionProviderProps) => {
   return (
-    
-    <TrransactionContext.Provider value={{transaction}}> 
-    {children}
+    <TrransactionContext.Provider value={{ transaction }}>
+      {children}
     </TrransactionContext.Provider>
   )
 }

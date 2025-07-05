@@ -22,7 +22,16 @@
         "category": "Alimentacao",
         "price": 20,
         "createdAt": "2025/07/05"
+    },
+     {
+        "id":4,
+        "description":"Pix da tia Deise",
+        "type": "income",
+        "category": "pix",
+        "price": 300,
+        "createdAt": "2025/07/05"
     }
+
     
     
 ]

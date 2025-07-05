@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Header } from '../../components/Header' // exemplo se o Header estiver em components
 import { Summary } from '../../components/Summary'
 import { TransactionsContainer,TransactionTable,PrinceHightLight } from './styles'
 import { SearchForm } from './components/SearchForm'
+import { TrransactionContext } from '../../contexts/TransactionsContent'
+
+const {transaction} = useContext(TrransactionContext)
 
 export const Transactions = () => {
-useEffect(()=>{
-  fetch('http://localhost:3000/transaction').then(responce => {
-    console.log(responce)
-  })
-},[])
+
   return (
     <div>
       <Header />
@@ -19,25 +18,21 @@ useEffect(()=>{
       <TransactionTable>
         
         <tbody>
-            
-            <tr>
-                <td width='50%'>Desenvolvimento de site</td>
+            {transaction.map((item)=>{
+              return(
+    <tr key={item.id}> 
+                <td width='50%'>{item.description}</td>
                 <td>
-                    <PrinceHightLight variant='income'>
-                        R$ 1.000,00
+                    <PrinceHightLight variant={item.type}>
+                       {item.price}
                         </PrinceHightLight></td>
-                <td>Venda</td>
-                <td>13/04/2022</td>
+                <td>{item.category}</td>
+                <td>{item.createdAt}</td>
             </tr>
-             <tr>
-                <td width='50%'>Hamburguer</td>
-                <td><PrinceHightLight variant='outcome'>
-                    -R$ 20,00
-                    </PrinceHightLight></td>
-                <td>Alimentacao</td>
-                <td>10/04/2022</td>
-            </tr>
-    
+              )
+            })}
+        
+           
         </tbody>
       </TransactionTable>
       </TransactionsContainer>

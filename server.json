@@ -5,7 +5,7 @@
         "type": "income",
         "category": "Venda",
         "price": 1400,
-        "createdAt": "Thu Jul 03 2025 19:42:06 GMT-0300"
+        "createdAt": "2025/07/04"
     },
     {
         "id":2,
@@ -13,7 +13,17 @@
         "type": "outcome",
         "category": "Alimentacao",
         "price": 50,
-        "createdAt": "Thu Jul 04 2025 19:42:06 GMT-0300"
+        "createdAt": "2025/06/04"
+    },
+        {
+        "id":3,
+        "description":"Acai",
+        "type": "outcome",
+        "category": "Alimentacao",
+        "price": 20,
+        "createdAt": "2025/07/05"
     }
+    
+    
 ]
 }

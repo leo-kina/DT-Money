@@ -17,7 +17,7 @@ export const NewTranscationModal = () => {
                             <TransactionTypeButton variant='income' value='income'><ArrowCircleUp size={24}/>Entrada</TransactionTypeButton>
                             <TransactionTypeButton variant='outcome' value='outcome'><ArrowCircleDown/>Saida</TransactionTypeButton>
                         </TransactionType>
-                        <button type='submit'>Cadastra</button>
+                        <button type='submit'>Cadastrar</button>
 
                     </form>
                     <CloseButton>

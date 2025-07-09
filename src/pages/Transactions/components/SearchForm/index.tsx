@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { SearchFormContainer } from './styles'
 import { MagnifyingGlass } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { createTransacaoShema } from '../../../../schemas/searchSchema'
+import { TrransactionContext } from '../../../../contexts/TransactionsContent'
 
 type SearchForm = z.infer<typeof createTransacaoShema>
 
 export const SearchForm = () => {
+  const {fetchTransactions} = useContext(TrransactionContext)
   const {
     register,
     handleSubmit,
@@ -17,10 +19,10 @@ export const SearchForm = () => {
     resolver: zodResolver(createTransacaoShema)
   })
 
-  async function handleSeachTransaction(data: SearchForm) {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    console.log(data)
-  }
+async function handleSeachTransaction(data: SearchForm) {
+  console.log(data.query)
+  await fetchTransactions(data.query) // correto, passando o valor da query
+}
 
   return (
     <SearchFormContainer onSubmit={handleSubmit(handleSeachTransaction)}>

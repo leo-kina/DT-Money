@@ -1,11 +1,5 @@
-import React, {
-  createContext,
-  useEffect,
-  useState,
-  type ReactNode
-} from 'react'
+import React, { createContext, useEffect, useState, type ReactNode } from 'react'
 
-// Tipo dos dados da transação
 interface TransactionsPropr {
   id: number
   description: string
@@ -15,35 +9,41 @@ interface TransactionsPropr {
   createdAt: string
 }
 
-// Tipo que será usado no contexto
 interface TransactionContentType {
-  transaction: TransactionsPropr[]
+  transaction: TransactionsPropr[]   // plural seria mais comum, mas mantive singular conforme seu pedido
+  fetchTransactions: (query?: string) => Promise<void>
 }
 
-// Props do componente Provider
 interface TransactionProviderProps {
   children: ReactNode
 }
 
-// ✅ Criando o contexto
 export const TrransactionContext = createContext({} as TransactionContentType)
 
-// ✅ Agora os hooks estão dentro do componente
 export const TransactionsContent = ({ children }: TransactionProviderProps) => {
   const [transaction, setTransaction] = useState<TransactionsPropr[]>([])
 
-  useEffect(() => {
-    async function fetchTransactions() {
-      const response = await fetch('http://localhost:3000/transaction')
-      const data = await response.json()
-      setTransaction(data)
-    }
+async function fetchTransactions(query?: string) {
+  const response = await fetch('http://localhost:3000/transaction')
+  const data = await response.json()
 
+  if (query) {
+    const filtered = data.filter((t: TransactionsPropr) =>
+      t.description.toLowerCase().includes(query.toLowerCase())
+    )
+    setTransaction(filtered)
+  } else {
+    setTransaction(data)
+  }
+}
+
+
+  useEffect(() => {
     fetchTransactions()
   }, [])
 
   return (
-    <TrransactionContext.Provider value={{ transaction }}>
+    <TrransactionContext.Provider value={{ transaction, fetchTransactions }}>
       {children}
     </TrransactionContext.Provider>
   )

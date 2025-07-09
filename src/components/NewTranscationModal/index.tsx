@@ -6,8 +6,7 @@ import { z } from 'zod'
 import {newTransactionSchema} from '../../schemas/newTransactionSchema'
 import { CloseButton, Content, Overlay, TransactionType, TransactionTypeButton } from './styles'
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
-import { api } from '../../lib/axios'
-import { ca } from 'zod/v4/locales'
+
 import { TrransactionContext } from '../../contexts/TransactionsContent'
 export const NewTranscationModal = () => {
     type NewTransactionFormInput = z.infer<typeof newTransactionSchema>

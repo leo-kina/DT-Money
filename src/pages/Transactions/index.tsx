@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext,  } from 'react'
 import { Header } from '../../components/Header' // exemplo se o Header estiver em components
 import { Summary } from '../../components/Summary'
 import { TransactionsContainer,TransactionTable,PrinceHightLight } from './styles'

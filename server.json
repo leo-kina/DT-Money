@@ -14,7 +14,7 @@
       "type": "outcome",
       "category": "Alimentacao",
       "price": 50,
-      "createdAt": "2025/06/04"
+      "createdAt": "2026/01/04"
     },
     {
       "id": 3,
@@ -31,7 +31,14 @@
       "category": "pix",
       "price": 300,
       "createdAt": "2025/07/05"
+    },
+    {
+      "id": "1427",
+      "description": "daw",
+      "price": 2,
+      "category": "sda",
+      "type": "income",
+      "createdAt": "2025-07-09T02:46:43.000Z"
     }
-
   ]
 }

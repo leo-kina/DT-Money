@@ -33,13 +33,13 @@ export const TransactionsContent = ({ children }: TransactionProviderProps) => {
   const [transaction, setTransaction] = useState<TransactionsPropr[]>([])
 
   useEffect(() => {
-    async function loadTransaction() {
+    async function fetchTransactions() {
       const response = await fetch('http://localhost:3000/transaction')
       const data = await response.json()
       setTransaction(data)
     }
 
-    loadTransaction()
+    fetchTransactions()
   }, [])
 
   return (

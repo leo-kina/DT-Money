@@ -18,7 +18,7 @@ export const Summary = () => {
         </SummaryCard>
                 <SummaryCard>
             <header>
-                <span>Saidas</span>
+                <span>Saídas</span>
                 <ArrowCircleDown size={32} color='#f75a68'/>
             </header>
             <strong>{priceFormatter.format(summary.outcome)}</strong>

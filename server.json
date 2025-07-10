@@ -2,27 +2,27 @@
   "transactions": [
     {
       "id": "1",
-      "description": "Desenvolvimneto de site",
+      "description": "Desenvolvimento de site",
       "type": "income",
       "category": "Venda",
       "price": 1400,
-      "createdAt": "2025/07/04"
+      "createdAt": "2025-07-04"
     },
     {
       "id": "2",
-      "description": "Hamburguer",
+      "description": "Hambúrguer",
       "type": "outcome",
-      "category": "Alimentacao",
+      "category": "Alimentação",
       "price": 50,
-      "createdAt": "2026/01/04"
+      "createdAt": "2025-01-04"
     },
     {
       "id": "3",
-      "description": "Acai",
+      "description": "Açaí",
       "type": "outcome",
-      "category": "Alimentacao",
+      "category": "Alimentação",
       "price": 20,
-      "createdAt": "2025/07/05"
+      "createdAt": "2025-07-05"
     }
 
   ]

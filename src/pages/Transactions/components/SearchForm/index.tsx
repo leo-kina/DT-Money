@@ -5,12 +5,12 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { createTransacaoShema } from '../../../../schemas/searchSchema'
-import { TrransactionContext } from '../../../../contexts/TransactionsContent'
+import { TransactionContext } from '../../../../contexts/TransactionContext'
 
 type SearchForm = z.infer<typeof createTransacaoShema>
 
 export const SearchForm = () => {
-  const {fetchTransactions} = useContext(TrransactionContext)
+  const {fetchTransactions} = useContext(TransactionContext)
   const {
     register,
     handleSubmit,

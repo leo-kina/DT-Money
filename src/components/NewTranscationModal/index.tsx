@@ -7,10 +7,10 @@ import {newTransactionSchema} from '../../schemas/newTransactionSchema'
 import { CloseButton, Content, Overlay, TransactionType, TransactionTypeButton } from './styles'
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
 
-import { TrransactionContext } from '../../contexts/TransactionsContent'
+import { TransactionContext } from '../../contexts/TransactionContext'
 export const NewTranscationModal = () => {
     type NewTransactionFormInput = z.infer<typeof newTransactionSchema>
-    const {createTransaction} = useContext(TrransactionContext)
+    const {createTransaction} = useContext(TransactionContext)
         const {
             register,
             handleSubmit,

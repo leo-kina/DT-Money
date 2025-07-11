@@ -13,6 +13,7 @@ margin-top: -5rem;
 `
 interface SummaryCardProps{
     variant?: 'green'
+    // erro no styled compenent por conta da variant (variant$)
 }
 
 export const SummaryCard = styled.div<SummaryCardProps>`
